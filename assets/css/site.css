@@ -627,7 +627,7 @@ html[data-theme="dark"] .hc-grid i { background: rgba(140,184,232,.12); }
 }
 
 /* ===== Navy top bar ===== */
-.navbar { background: #5b7a99; border-bottom: 0; box-shadow: 0 1px 0 rgba(0,0,0,.08); opacity: 1; }
+.navbar { background: #7093b5; border-bottom: 0; box-shadow: 0 1px 0 rgba(0,0,0,.08); opacity: 1; }
 .navbar .brand, .navbar .brand b { color: #fff; }
 .navbar .brand:hover { color: #cfe0f3; }
 .navbar .menu a { color: rgba(255,255,255,.78); }
@@ -636,7 +636,7 @@ html[data-theme="dark"] .hc-grid i { background: rgba(140,184,232,.12); }
 .navbar .theme-toggle { color: rgba(255,255,255,.85); border-color: rgba(255,255,255,.35); }
 .navbar .theme-toggle:hover { color: #fff; border-color: #fff; }
 .nav-toggle span { background: #fff; }
-@media (max-width: 760px) { .navbar .menu { background: #5b7a99; border-bottom: 0; } }
+@media (max-width: 760px) { .navbar .menu { background: #7093b5; border-bottom: 0; } }
 html[data-theme="dark"] .navbar { background: #3e5670; }
 html[data-theme="dark"] .navbar .menu a.active { color: #fff; }
 html[data-theme="dark"] .nav-toggle span { background: #fff; }
