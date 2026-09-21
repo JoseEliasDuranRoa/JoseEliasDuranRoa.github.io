@@ -3,7 +3,7 @@
   var root = document.documentElement;
   var saved = null;
   try { saved = localStorage.getItem('theme'); } catch (e) {}
-  var theme = saved || (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  var theme = saved || 'light';
   root.setAttribute('data-theme', theme);
 
   function icon(btn) {

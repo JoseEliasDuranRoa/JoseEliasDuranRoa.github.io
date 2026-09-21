@@ -594,3 +594,34 @@ html[data-theme="dark"] body.teach .slide-card { background: #161b21; }
 html[data-theme="dark"] body.teach .course:hover { border-color: #3a424c; }
 html[data-theme="dark"] body.teach .uni-badge { background: #fff; }
 html[data-theme="dark"] body.teach .ug-head img { background: #fff; border-radius: 6px; padding: 2px; }
+
+/* ===== Homepage polish ===== */
+.about-grid { margin-top: 44px; gap: 40px; }
+.about-grid .profile img { border-radius: 10px; box-shadow: 0 1px 2px rgba(0,0,0,.06), 0 10px 30px rgba(31,78,121,.14); }
+.about-text p:first-child { font-size: 18.5px; }
+.about-text .cv-row { margin-top: 24px; }
+
+.home-news, .home-contact { clear: both; margin-top: 44px; }
+.home-news h2, .home-contact h2 {
+  font-family: var(--sans); font-size: 13px; font-weight: 600; letter-spacing: 1.6px;
+  text-transform: uppercase; color: var(--theme); margin: 0 0 12px;
+  padding-bottom: 8px; border-bottom: 1px solid var(--divider);
+}
+.home-news ul { list-style: none; margin: 0; padding: 0; }
+.home-news li { display: flex; gap: 22px; padding: 9px 0; font-size: 16.5px; }
+.home-news .nd {
+  flex: 0 0 82px; font-family: var(--sans); font-size: 14px; font-weight: 600;
+  color: var(--light); padding-top: 2px;
+}
+.hc-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.hc-grid > div { display: flex; gap: 12px; align-items: flex-start; font-family: var(--sans); font-size: 15.5px; line-height: 1.55; }
+.hc-grid i {
+  flex: none; width: 34px; height: 34px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: rgba(31,78,121,.08); color: var(--theme); font-size: 14px;
+}
+html[data-theme="dark"] .hc-grid i { background: rgba(140,184,232,.12); }
+@media (max-width: 760px) {
+  .hc-grid { grid-template-columns: 1fr; }
+  .home-news li { flex-direction: column; gap: 0; }
+}
