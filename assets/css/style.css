@@ -1,0 +1,333 @@
+/* ===================================================================
+   José Elías Durán Roa — academic site
+   Classic style: serif type, white background, oxblood accent
+   =================================================================== */
+
+:root {
+  --ink:    #2a2118;   /* headings */
+  --body:   #463c30;   /* body text */
+  --muted:  #8c7e6b;   /* metadata */
+  --rule:   #e4ddd1;   /* hairlines */
+  --accent: #6b2737;   /* oxblood */
+  --bg:     #ffffff;
+  --bg-alt: #faf7f1;   /* faint warm panel */
+  --maxw:   820px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--body);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 28px; }
+
+/* ===== NAV ===== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255,255,255,.92);
+  backdrop-filter: saturate(180%) blur(8px);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 14px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 21px;
+  color: var(--ink);
+  letter-spacing: .3px;
+}
+.brand:hover { text-decoration: none; color: var(--accent); }
+.nav-links { display: flex; gap: 22px; flex-wrap: wrap; }
+.nav-links a {
+  font-size: 15px;
+  letter-spacing: .5px;
+  color: var(--body);
+  text-transform: uppercase;
+  font-variant: small-caps;
+}
+.nav-links a:hover { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); }
+.nav-links a.active { color: var(--accent); border-bottom: 2px solid var(--accent); }
+.nav { transition: box-shadow .2s ease, background .2s ease; }
+.nav.scrolled { box-shadow: 0 4px 18px rgba(42,33,24,.08); }
+
+/* ===== HERO ===== */
+.hero {
+  padding: 76px 0 64px;
+  background:
+    radial-gradient(1100px 380px at 78% -8%, rgba(107,39,55,.06), transparent 60%),
+    linear-gradient(180deg, var(--bg-alt) 0%, #fff 72%);
+  border-bottom: 1px solid var(--rule);
+}
+.hero-inner {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 0 28px;
+  display: flex;
+  gap: 52px;
+  align-items: center;
+}
+.hero-photo { flex: 0 0 auto; }
+.portrait {
+  display: block;
+  width: 300px;
+  height: 372px;
+  object-fit: cover;
+  object-position: 50% 16%;
+  border-radius: 18px;
+  box-shadow: 0 24px 52px rgba(42,33,24,.28), 0 0 0 8px #fff, 0 0 0 9px var(--rule);
+}
+.hero-text { flex: 1 1 auto; min-width: 0; }
+.eyebrow-h {
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  font-size: 12px; font-weight: 700; letter-spacing: 2.8px;
+  text-transform: uppercase; color: var(--accent);
+  margin: 0 0 12px;
+}
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 1.04;
+  color: var(--ink);
+  margin: 0 0 8px;
+  letter-spacing: .3px;
+}
+.hero h1 .nick { color: var(--muted); font-weight: 500; font-style: italic; font-size: .62em; }
+.role { font-size: 18.5px; color: var(--body); margin: 0 0 18px; }
+.role strong { color: var(--ink); font-weight: 600; }
+.accent-line { width: 62px; height: 3px; background: var(--accent); border-radius: 3px; margin: 0 0 22px; }
+.bio { font-size: 17.5px; line-height: 1.66; color: var(--body); margin: 0 0 14px; max-width: 53ch; }
+.bio strong { color: var(--ink); font-weight: 600; }
+
+.links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.lk {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 16px; border-radius: 10px;
+  border: 1px solid var(--rule); background: #fff;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px; font-weight: 600; letter-spacing: .2px; color: var(--ink);
+  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease, color .16s ease, background .16s ease;
+}
+.lk svg { width: 16px; height: 16px; stroke-width: 1.7; }
+.lk:hover { text-decoration: none; border-color: var(--accent); color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 18px rgba(42,33,24,.10); }
+.lk.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+.lk.primary:hover { color: #fff; transform: translateY(-2px); box-shadow: 0 10px 22px rgba(107,39,55,.32); }
+
+/* ===== BLOCKS ===== */
+.block { padding: 30px 0 48px; }
+.block.alt { background: var(--bg-alt); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+
+.head { text-align: center; margin: 46px 0 26px; }
+.head:first-child { margin-top: 10px; }
+.head h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 30px;
+  letter-spacing: .5px;
+  color: var(--ink);
+  margin: 0;
+}
+.head .orn {
+  display: block; margin: 8px auto 0; width: 70px;
+  border: 0; border-top: 1px solid var(--accent); position: relative;
+}
+.head .orn::after {
+  content: "\2766";
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  background: var(--bg); padding: 0 8px; color: var(--accent); font-size: 14px;
+}
+.block.alt .head .orn::after { background: var(--bg-alt); }
+
+/* ===== RESEARCH ENTRIES ===== */
+.entry { margin: 0 0 30px; padding-left: 26px; text-indent: -26px; }
+.title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600; font-size: 23px; line-height: 1.3;
+  color: var(--ink); display: inline;
+}
+.byline { display: block; text-indent: 0; font-size: 17px; color: var(--body); margin: 5px 0 0; }
+.byline a { color: var(--accent); border-bottom: 1px solid rgba(107,39,55,.3); }
+.byline a:hover { text-decoration: none; border-bottom-color: var(--accent); }
+.jel {
+  display: block; text-indent: 0; font-size: 14px; letter-spacing: 1px;
+  color: var(--muted); margin: 4px 0 0; font-variant: small-caps;
+}
+.outlet { display: block; text-indent: 0; font-size: 16.5px; color: var(--body); margin: 4px 0 0; }
+.abstract {
+  display: block; text-indent: 0; font-size: 16px; color: var(--body);
+  margin: 9px 0 0; line-height: 1.55; padding-left: 14px;
+  border-left: 2px solid var(--rule);
+}
+
+.links { display: block; text-indent: 0; margin: 12px 0 0; }
+.links a {
+  display: inline-block;
+  font-size: 14.5px; letter-spacing: .4px;
+  color: var(--accent); background: transparent;
+  border: 1px solid var(--accent); border-radius: 6px;
+  padding: 6px 16px; margin: 7px 9px 0 0;
+  transition: background .18s ease, color .18s ease, box-shadow .18s ease;
+}
+.links a:hover { text-decoration: none; background: var(--accent); color: #fff; box-shadow: 0 2px 8px rgba(107,39,55,.22); }
+
+/* ===== TEACHING ===== */
+.lead { text-align: center; color: var(--muted); margin: 0 0 26px; }
+.course {
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  margin: 0 0 16px;
+  background: #fff;
+  overflow: hidden;
+  transition: box-shadow .2s ease, border-color .2s ease;
+}
+.course[open] { box-shadow: 0 8px 24px rgba(42,33,24,.07); }
+.course:hover { border-color: #d8cdba; }
+.c-title {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600; font-size: 22px; color: var(--ink);
+}
+.c-meta { display: block; font-size: 15.5px; color: var(--muted); margin-top: 3px; }
+
+.term {
+  display: block;
+  font-variant: small-caps; letter-spacing: .6px;
+  font-size: 15.5px; color: var(--accent);
+  margin: 16px 0 8px;
+}
+.lec-list { list-style: none; margin: 0; padding: 0; }
+.lec-list li { font-size: 17px; color: var(--body); margin: 0 0 7px; line-height: 1.4; }
+.lec-list .n { color: var(--muted); }
+.lec-list a { color: var(--accent); border-bottom: 1px solid rgba(107,39,55,.3); }
+.lec-list a:hover { text-decoration: none; border-bottom-color: var(--accent); }
+.lec-list em { color: var(--muted); font-size: 14.5px; }
+
+.slides { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 0; }
+.chip {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 40px; padding: 7px 13px;
+  border: 1px solid var(--rule); border-radius: 6px;
+  color: var(--accent); font-size: 14.5px; letter-spacing: .3px;
+  transition: background .16s ease, color .16s ease, border-color .16s ease;
+}
+.chip:hover { text-decoration: none; background: var(--accent); color: #fff; border-color: var(--accent); }
+
+/* Course header with university emblem */
+summary.course-head { display: flex; align-items: center; gap: 16px; padding: 16px 18px; cursor: pointer; list-style: none; }
+summary.course-head::-webkit-details-marker { display: none; }
+summary.course-head::marker { content: ""; }
+summary.course-head:hover .c-title { color: var(--accent); }
+.course-head .ch-info { flex: 1 1 auto; min-width: 0; }
+.chev {
+  flex: 0 0 auto; width: 9px; height: 9px;
+  border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted);
+  transform: rotate(45deg); transition: transform .2s ease;
+}
+.course[open] .chev { transform: rotate(-135deg); }
+.course-body { padding: 2px 18px 18px; }
+.course-body .term:first-child { margin-top: 8px; }
+.uni-badge {
+  flex: 0 0 62px; width: 62px; height: 62px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--rule); border-radius: 12px;
+  background: #fff; overflow: hidden;
+  box-shadow: 0 2px 8px rgba(42,33,24,.07);
+}
+.uni-badge img { width: 100%; height: 100%; object-fit: contain; padding: 5px; box-sizing: border-box; }
+.uni-badge .mono { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 17px; color: var(--accent); letter-spacing: .5px; }
+.course-head .c-title, .course-head .c-meta { display: block; }
+
+/* Slides grid with previews */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(212px, 1fr));
+  gap: 16px; margin: 14px 0 6px;
+}
+.slide-card {
+  display: flex; flex-direction: column;
+  border: 1px solid var(--rule); border-radius: 10px; overflow: hidden;
+  background: #fff; color: var(--ink);
+  transition: transform .14s ease, box-shadow .16s ease, border-color .16s ease;
+}
+a.slide-card:hover { text-decoration: none; transform: translateY(-3px); box-shadow: 0 10px 26px rgba(42,33,24,.15); border-color: var(--accent); }
+.thumb {
+  position: relative; aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, #864252 0%, #6b2737 55%, #571f2c 100%);
+  border-bottom: 1px solid var(--rule);
+}
+.thumb img { position: relative; z-index: 1; width: 100%; height: 100%; object-fit: cover; display: block; }
+.thumb-ph {
+  display: flex; flex-direction: column;
+  position: absolute; inset: 0; z-index: 0;
+  align-items: center; justify-content: center;
+  color: rgba(255,255,255,.95); font-family: 'Cormorant Garamond', serif;
+  font-size: 40px; line-height: 1;
+}
+.thumb-ph::before {
+  content: "LECTURE";
+  font-family: 'Segoe UI', sans-serif; font-size: 10px; font-weight: 600;
+  letter-spacing: 2.5px; opacity: .75; margin-bottom: 6px;
+}
+.thumb.noimg img { display: none; }
+.cap { padding: 11px 13px 14px; font-size: 14.5px; line-height: 1.36; color: var(--body); }
+.cap .n { display: block; font-variant: small-caps; letter-spacing: .5px; color: var(--accent); font-size: 13px; margin-bottom: 2px; }
+.slide-card.soon { opacity: .6; }
+
+/* ===== FOOTER ===== */
+.footer {
+  text-align: center;
+  padding: 48px 0 40px;
+  border-top: 1px solid var(--rule);
+  background: var(--bg);
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.9;
+}
+.foot-h {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600; font-size: 26px; color: var(--ink);
+  margin: 0 0 14px;
+}
+.footer a { color: var(--accent); border-bottom: 1px solid rgba(107,39,55,.3); }
+.footer a:hover { text-decoration: none; border-bottom-color: var(--accent); }
+.footer .sep { color: #cfc6b6; margin: 0 8px; }
+.footer .copy { font-size: 14px; color: var(--muted); margin-top: 18px; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 720px) {
+  body { font-size: 17px; }
+  .nav-inner { flex-direction: column; align-items: flex-start; gap: 10px; padding: 12px 20px; }
+  .nav-links { gap: 16px; }
+  .hero { padding: 44px 0 36px; }
+  .hero-inner { flex-direction: column; text-align: center; gap: 28px; }
+  .portrait { width: 230px; height: 286px; }
+  .accent-line { margin-left: auto; margin-right: auto; }
+  .bio { max-width: 100%; }
+  .links { justify-content: center; }
+  .grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+  summary.course-head { gap: 12px; }
+  .hero h1 { font-size: 40px; }
+  .wrap { padding: 0 20px; }
+}
