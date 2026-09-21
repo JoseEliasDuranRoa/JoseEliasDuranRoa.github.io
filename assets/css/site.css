@@ -625,3 +625,19 @@ html[data-theme="dark"] .hc-grid i { background: rgba(140,184,232,.12); }
   .hc-grid { grid-template-columns: 1fr; }
   .home-news li { flex-direction: column; gap: 0; }
 }
+
+/* ===== Navy top bar ===== */
+.navbar { background: #1f3a5f; border-bottom: 0; box-shadow: 0 1px 0 rgba(0,0,0,.08); opacity: 1; }
+.navbar .brand, .navbar .brand b { color: #fff; }
+.navbar .brand:hover { color: #cfe0f3; }
+.navbar .menu a { color: rgba(255,255,255,.78); }
+.navbar .menu a:hover { color: #fff; }
+.navbar .menu a.active { color: #fff; box-shadow: inset 0 -2px 0 #fff; }
+.navbar .theme-toggle { color: rgba(255,255,255,.85); border-color: rgba(255,255,255,.35); }
+.navbar .theme-toggle:hover { color: #fff; border-color: #fff; }
+.nav-toggle span { background: #fff; }
+@media (max-width: 760px) { .navbar .menu { background: #1f3a5f; border-bottom: 0; } }
+html[data-theme="dark"] .navbar { background: #0f1c2d; }
+html[data-theme="dark"] .navbar .menu a.active { color: #fff; }
+html[data-theme="dark"] .nav-toggle span { background: #fff; }
+.home-contact { margin-top: 52px; }
