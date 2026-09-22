@@ -641,3 +641,8 @@ html[data-theme="dark"] .navbar { background: #2f5f8f; }
 html[data-theme="dark"] .navbar .menu a.active { color: #fff; }
 html[data-theme="dark"] .nav-toggle span { background: #fff; }
 .home-contact { margin-top: 52px; }
+
+/* ===== BRAND LOGO (silhouette) ===== */
+.navbar .brand { display: inline-flex; align-items: center; gap: 10px; }
+.navbar .brand-logo { width: 46px; height: 46px; flex: none; display: block; }
+@media (max-width: 760px) { .navbar .brand-logo { width: 32px; height: 32px; } }
